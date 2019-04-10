@@ -5,6 +5,16 @@
     <title>Example App</title>
 	
 	<style>
+		body {
+			font-family: Tahoma, Geneva, sans-serif;
+			margin: 0;
+			
+			padding: 10px;
+			padding-top: 0;
+			border: 0;
+			font-size: 100%;
+			vertical-align: baseline;
+		}
 		header {
 			width: 100%;
 			height: 150px;
@@ -12,17 +22,29 @@
 			text-align: center;
 		}
 		header h1 {
-			font-family: Tahoma, Geneva, sans-serif;
 			font-size: xx-large;
 			color: #efe3e;
 		}
 		header img {
 			width: 400px;
 		}
+		
+		nav {
+			width: 100%;
+			background-color: red;
+		}
+		
+		nav a {
+			display: inline-block;
+			padding: 10px;
+			margin-left: 7px;
+			text-decoration: none;
+			color: white;
+		}
+		
 		.login-form {
 			width: 300px;
 			margin: 0 auto;
-			font-family: Tahoma, Geneva, sans-serif;
 		}
 		.login-form h1 {
 			text-align: center;
@@ -42,18 +64,24 @@
 		.login-form input[type="button"] {
 			width: 100%;
 			padding: 15px;
-			background-color: #535b63;
+			background-color: #ec1f27;
 			border: 0;
 			box-sizing: border-box;
 			cursor: pointer;
 			font-weight: bold;
 			color: #ffffff;
 		}
+		
+		.error-message p {
+			padding: 20px;
+		}
+		
+		
+		
 		footer {
 			width: 100%;
-			height: 100px;
 			position: fixed;
-			margin-bottom: 0;
+			bottom: 0;
 			text-align: center;
 		}
 		
@@ -66,17 +94,14 @@
 <body>
 	<header>
 		<h1>Auckland Property Management</h1>
-		<img src="houses-logo.png" alt="APM Logo"/>
+		<a href="/"><img src="houses-logo.png" alt="APM Logo"/></a>
 	</header>
-	{{#if showTitle}}
-		<h1>Home</h1>
-	{{/if}}
-
-		<!-- Calls `foo` helper, overridden at render-level. -->
-		<p>{{foo}}</p>
-
-		<!-- Calls `bar` helper, defined at instance-level. -->
-		<p>{{bar}}</p>
+	<nav>
+		<div id="navContent">
+			<a href="/register">Register</a>
+			<a href="/login">Log in</a>
+		</div>
+	</nav>
 
     {{{body}}}
 
@@ -84,4 +109,5 @@
 		<p>Copyright &copy; Auckland Property Management 2019</p>
 	</footer>
 </body>
+<script src="./assets/index.js"></script>
 </html>
